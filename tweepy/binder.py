@@ -142,11 +142,11 @@ def bind_api(**config):
                     req.get_method = lambda: self.method
                     resp = urlopen(req)
                     resp.status = hasattr(resp, 'getcode') and resp.getcode() or 200
-                except URLError, e:
-                    if hasattr(e, 'reason'):
-                        resp.status = e.reason
-                    if hasattr(e, 'code'):
-                        resp.status = e.code
+#                except URLError, e:
+#                    if hasattr(e, 'reason'):
+#                        resp.status = e.reason
+#                    if hasattr(e, 'code'):
+#                        resp.status = e.code
                 except Exception, e:
                     raise TweepError('Failed to send request: %s' % e)
 
